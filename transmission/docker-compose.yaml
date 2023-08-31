@@ -1,0 +1,26 @@
+---
+version: "3.5"
+services:
+  transmission:
+    image: lscr.io/linuxserver/transmission:latest
+    container_name: transmissionmc
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Vienna
+      - TRANSMISSION_WEB_HOME= #optional
+      - USER= #optional
+      - PASS= #optional
+      - WHITELIST=  #optional
+      - PEERPORT= #optional
+      - HOST_WHITELIST= #optional
+    volumes:
+      - ${dockerpath}/transmission/data:/config
+      - ${mediapath}/downloads:/downloads
+      - ${mediapath}/watch:/watch
+    ports:
+      - 9091:9091
+      - 51413:51413
+      - 51413:51413/udp
+    restart: unless-stopped
+  

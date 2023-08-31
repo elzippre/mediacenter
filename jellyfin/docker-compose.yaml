@@ -1,0 +1,27 @@
+---
+version: '3.5'
+services:
+  jellyfin:
+    image: jellyfin/jellyfin
+    container_name: jellyfinmc
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Vienna
+    ports:
+      - 8096:8096
+      - 8920:8920
+      - 1900:1900/udp
+      - 7359:7359/udp
+    volumes:
+      - ${dockerpath}/jellyfin/config:/config
+      - ${dockerpath}/jellyfin/cache:/cache
+      - ${mediapath}/tv:/tv
+      - ${mediapath}/movies:/movies
+      - ${mediapath}/music:/music
+    restart: 'unless-stopped'
+    
+
+    # Optional - alternative address used for autodiscovery
+ #   environment:
+#      - JELLYFIN_PublishedServerUrl=http://example.com

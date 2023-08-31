@@ -1,0 +1,17 @@
+---
+version: "3.5"
+services:
+  lidarr:
+    image: lscr.io/linuxserver/lidarr:latest
+    container_name: lidarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Vienna
+    volumes:
+      - ${dockerpath}/lidarr/config:/config
+      - ${mediapath}/music:/music #optional
+      - ${mediapath}/downloads:/downloads #optional
+    ports:
+      - 8686:8686
+    restart: unless-stopped
