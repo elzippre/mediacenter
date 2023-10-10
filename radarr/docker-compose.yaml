@@ -12,6 +12,7 @@ services:
       - ${dockerpath}/radarr/data:/config
       - ${mediapath}/movies:/movies #optional
       - ${mediapath}/downloads:/downloads #optional
+      - ${mediapath}/tv:/tv #optional
     ports:
       - 7878:7878
     restart: unless-stopped
