@@ -10,3 +10,5 @@ Creates the .env files for all containers and spins them up.
 ## stop.sh
 Stops all container.
 
+## update.sh
+Updates all containers and restarts them, containers must be stopped first!
