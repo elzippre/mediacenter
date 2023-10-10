@@ -7,8 +7,10 @@ do
       m) echo mediapath=$OPTARG > .env;;
       d) echo dockerpath=$OPTARG >> .env;;
       i) echo ipaddress= $OPTARG >> .env;;
+      c) echo jcpu= $OPTARG >> .env;;
+      m) echo jmemory= $OPTARG >> .env;;
       \?) echo "Invalid option" & exit;;
-      h|*) echo "-h this help, -m media path, -d Docker data path, -i IP address for containers" & exit;;
+      h|*) echo "-h this help, -m media path, -d Docker data path, -i IP address for containers -c CPU limit for Jellyfin -m Memory limit for Jellyfin" & exit;;
     esac
 done
 
