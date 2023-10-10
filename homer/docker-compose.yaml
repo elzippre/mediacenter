@@ -1,0 +1,17 @@
+---
+version: 3.5"
+services:
+  homer:
+    image: b4bz/homer
+    container_name: homer
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Vienna
+     # - INIT_ASSETS=1 # default
+    volumes:
+      - ${dockerpath}/homer/config:/www/assets
+    ports:
+      - 8080:8080
+ 
+    restart: unless-stopped

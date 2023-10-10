@@ -4,23 +4,26 @@ services:
   jellyfin:
     image: jellyfin/jellyfin
     container_name: jellyfinmc
-    cpus: ${jcpus}
-    memory: ${jmemory}
+    cpus: ${jcpus} # set by .env file
+    
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/Vienna
-    ports:
-      - 8096:8096
-      - 8920:8920
-      - 1900:1900/udp
-      - 7359:7359/udp
+    
     volumes:
       - ${dockerpath}/jellyfin/config:/config
       - ${dockerpath}/jellyfin/cache:/cache
       - ${mediapath}/tv:/tv
       - ${mediapath}/movies:/movies
       - ${mediapath}/music:/music
+
+    ports:
+      - 8096:8096
+      - 8920:8920
+      - 1900:1900/udp
+      - 7359:7359/udp
+
     restart: 'unless-stopped'
     
 
