@@ -1,5 +1,4 @@
 ---
-version: "3.5"
 services:
   jackett:
     image: lscr.io/linuxserver/jackett:latest
@@ -11,8 +10,8 @@ services:
       - AUTO_UPDATE=true #optional
       - RUN_OPTS= #optional
     volumes:
-      - ${dockerpath}/jackett/data:/config
-      - ${mediapath}/downloads:/downloads
+      - ${DOCKERPATH}/jackett/data:/config
+      - ${MEDIAPATH}/downloads:/downloads
     ports:
       - 9117:9117
     restart: unless-stopped

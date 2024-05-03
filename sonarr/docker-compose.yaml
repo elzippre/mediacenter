@@ -1,5 +1,4 @@
 ---
-version: "3.5"
 services:
   sonarr:
     image: lscr.io/linuxserver/sonarr:latest
@@ -9,9 +8,9 @@ services:
       - PGID=1000
       - TZ=Europe/Vienna
     volumes:
-      - ${dockerpath}/sonarr/data:/config
-      - ${mediapath}/tv:/tv #optional
-      - ${mediapath}/downloads:/downloads #optional
+      - ${DOCKERPATH}/sonarr/data:/config
+      - ${MEDIAPATH}/tv:/tv #optional
+      - ${MEDIAPATH}/downloads:/downloads #optional
     ports:
       - 8989:8989
     restart: unless-stopped

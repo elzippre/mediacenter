@@ -1,5 +1,4 @@
 ---
-version: "3.5"
 services:
   radarr:
     image: lscr.io/linuxserver/radarr:latest
@@ -9,10 +8,10 @@ services:
       - PGID=1000
       - TZ=Europe/Vienna
     volumes:
-      - ${dockerpath}/radarr/data:/config
-      - ${mediapath}/movies:/movies #optional
-      - ${mediapath}/downloads:/downloads #optional
-      - ${mediapath}/tv:/tv #optional
+      - ${DOCKERPATH}/radarr/data:/config
+      - ${MEDIAPATH}/movies:/movies #optional
+      - ${MEDIAPATH}/downloads:/downloads #optional
+      - ${MEDIAPATH}/tv:/tv #optional
     ports:
       - 7878:7878
     restart: unless-stopped

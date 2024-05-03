@@ -1,5 +1,4 @@
 ---
-version: "3.6"
 services:
   prowlarr:
     image: lscr.io/linuxserver/prowlarr:latest
@@ -9,8 +8,8 @@ services:
       - PGID=1000
       - TZ=Europe/Vienna
     volumes:
-      - ${dockerpath}/prowlarr/config:/config
-       - ${mediapath}/downloads:/downloads
+      - ${DOCKERPATH}/prowlarr/config:/config
+      - ${MEDIAPATH}/downloads:/downloads
     ports:
       - 9696:9696
     restart: unless-stopped

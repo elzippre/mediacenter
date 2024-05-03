@@ -1,5 +1,4 @@
 ---
-version: "3.6"
 services:
     organizr:
         image: organizr/organizr:latest
@@ -11,7 +10,7 @@ services:
             - TZ=Europe/Vienna
         
         volumes:
-            - ${dockerpath}/organizr/config:/config
+            - ${DOCKERPATH}/organizr/config:/config
         
         ports:
             - 8484:80

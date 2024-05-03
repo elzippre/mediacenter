@@ -1,10 +1,9 @@
 ---
-version: '3.5'
 services:
   jellyfin:
     image: jellyfin/jellyfin
     container_name: jellyfinmc
-    cpus: ${jcpus} # set by .env file
+    cpus: ${JCPUS} # set by .env file
     
     environment:
       - PUID=1000
@@ -12,11 +11,11 @@ services:
       - TZ=Europe/Vienna
     
     volumes:
-      - ${dockerpath}/jellyfin/config:/config
-      - ${dockerpath}/jellyfin/cache:/cache
-      - ${mediapath}/tv:/tv
-      - ${mediapath}/movies:/movies
-      - ${mediapath}/music:/music
+      - ${DOCKERPATH}/jellyfin/config:/config
+      - ${DOCKERPATH}/jellyfin/cache:/cache
+      - ${MEDIAPATH}/tv:/tv
+      - ${MEDIAPATH}/movies:/movies
+      - ${MEDIAPATH}/music:/music
 
     ports:
       - 8096:8096
