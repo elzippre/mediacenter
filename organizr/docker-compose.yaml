@@ -7,12 +7,12 @@ services:
         environment:
             - PUID=1000
             - PGID=1000
-            - TZ=Europe/Vienna
+            - TZ=${TZ}
         
         volumes:
             - ${DOCKERPATH}/organizr/config:/config
         
         ports:
-            - 8484:80
+            - 8080:80
         
         restart: unless-stopped

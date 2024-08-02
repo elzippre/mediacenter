@@ -4,6 +4,21 @@ creates docker container for jellyfin, radarr, sonarr, jackett, lidarr and trans
 
 ## usage of...
 
+### apps2install.txt
+- add all services you like to install into apps2install.txt
+- put each folder name in a new line
+
+### Configuration
+
+#### .env file
+```bash
+PIHOLEPW=Password123
+DOCKERPATH=/srv/mediacenter
+MEDIAPATH=/mnt/data/mediafiles
+TZ=Europe/Vienna
+```
+
+
 ### create.sh
 Creates the .env files for all containers and spins them up.
 

@@ -1,0 +1,23 @@
+---
+services:
+  pihole:
+    image: pihole/pihole:latest
+    container_name: pihole
+    hostname: pihole
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+      - WEBPASSWORD=${PIHOLEPW} #Add piholePW var to .env file!!!
+    volumes:
+      - ${DOCKERPATH}/pihole/etc:/etc/pihole
+      - ${DOCKERPATH}/pihole/dnsmasq.d:/etc/dnsmasq.d'  
+  
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "80:80/tcp"
+  
+      
+       
+    restart: unless-stopped

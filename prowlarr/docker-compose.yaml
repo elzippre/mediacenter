@@ -6,7 +6,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Europe/Vienna
+      - TZ=${TZ}
     volumes:
       - ${DOCKERPATH}/prowlarr/config:/config
       - ${MEDIAPATH}/downloads:/downloads
