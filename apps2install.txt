@@ -4,3 +4,4 @@ radarr
 sonarr
 lidarr
 prowlarr
+flaresolverr
