@@ -9,5 +9,5 @@ echo "Done, variables written to .env!"
 
 for app in $(cat apps2install.txt )
 do
-   docker compose -f ./$app/docker-compose.yaml --env-file ../.env up -d
+   docker compose -f ./$app/docker-compose.yaml --env-file ./.env up -d
 done
