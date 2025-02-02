@@ -6,3 +6,4 @@ lidarr
 prowlarr
 flaresolverr
 transmission
+cloudcommander

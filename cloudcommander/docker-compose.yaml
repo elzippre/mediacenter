@@ -9,7 +9,7 @@ services:
     ports:
       - 8001:8000
     volumes:
-      - ${DOCKERPATH}/config:/root
+      - ${DOCKERPATH}/cloudcommander/config:/root
       - ${MEDIAPATH}:/mnt/mc
 
     restart: unless-stopped    
