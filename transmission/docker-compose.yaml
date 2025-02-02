@@ -22,4 +22,6 @@ services:
       - 51413:51413
       - 51413:51413/udp
     restart: unless-stopped
-  
+    logging:
+      options:
+        max-size: 50m

@@ -4,3 +4,5 @@ radarr
 sonarr
 lidarr
 prowlarr
+flaresolverr
+transmission

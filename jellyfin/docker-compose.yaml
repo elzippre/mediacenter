@@ -3,7 +3,7 @@ services:
   jellyfin:
     image: jellyfin/jellyfin
     container_name: jellyfinmc
-    cpus: ${JCPUS} # set by .env file
+    cpus: '${JCPUS}' # set by .env file
     
     environment:
       - PUID=1000
@@ -24,7 +24,9 @@ services:
       - 7359:7359/udp
 
     restart: 'unless-stopped'
-    
+    logging:
+      options:
+        max-size: 50m    
 
     # Optional - alternative address used for autodiscovery
  #   environment:

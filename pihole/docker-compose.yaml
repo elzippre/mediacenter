@@ -16,8 +16,9 @@ services:
     ports:
       - "53:53/tcp"
       - "53:53/udp"
-      - "8011:80/tcp"
-  
-      
+      - "8011:80/tcp"    
        
     restart: unless-stopped
+    logging:
+      options:
+        max-size: 50m

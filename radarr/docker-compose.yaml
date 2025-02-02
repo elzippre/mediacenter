@@ -15,4 +15,6 @@ services:
     ports:
       - 7878:7878
     restart: unless-stopped
-
+    logging:
+      options:
+        max-size: 50m
