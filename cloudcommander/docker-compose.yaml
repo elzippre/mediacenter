@@ -1,0 +1,18 @@
+services:
+  cloudcommander:
+    container_name: cloudcommander
+    image: coderaiser/cloudcmd
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=${TZ}
+    ports:
+      - 8001:8000
+    volumes:
+      - ${DOCKERPATH}/config:/root
+      - ${MEDIAPATH}:/mnt/mc
+
+    restart: unless-stopped    
+    logging:
+      options:
+        max-size: 50m
